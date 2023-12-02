@@ -7,7 +7,7 @@ WORKDIR /go/src/gshark
 COPY . .
 RUN go env && go build -o server .
 
-FROM alpine:latest
+FROM alpine:3.18.5
 
 WORKDIR /go/src/gshark
 COPY --from=0 /go/src/github.com/madneal/gshark/server ./
